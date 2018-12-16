@@ -1,7 +1,24 @@
+
 <html>
 <body>
-<a> "This page will be for creating new menu items"</a>
+<a> "This page will be for making new menu item"</a>
+<a>Enter new item for {{restaurants[restaurant_id-1]['name']}}</a>
+<form action="{{ url_for('newMenuItem',restaurant_id = restaurant_id )}}" method = 'post'>
+<!--because there are only 3 restaurants in the list, but there are more items in the items-->
+<!--so if the id of the newly created restaurant is greater than 3, it would be out of range-->
+<dl>
+	Name: &nbsp <input type ='text' size='30' name='name' required></br>
+    Description: &nbsp &nbsp &nbsp &nbsp
+    <input type ='text' size='180' name='description' required> </br>
+    price: &nbsp &nbsp &nbsp &nbsp
+    <input type ='text' size='30' name='price' required> </br>
+    Course: &nbsp &nbsp &nbsp &nbsp
+    <input type ='text' size='30' name='course' required> </br>
 
+        <input type='submit' value='Create'>
+        <a href = "{{url_for('showRestaurants')}}" >Cancel</a>
+</dl>
+        </form>
 </body>
 
 </html>

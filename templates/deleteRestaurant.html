@@ -1,7 +1,23 @@
 <html>
 <body>
 <a> "This page will be for deleting restaurant"</a>
+<h1>Are you sure you want to delete {{restaurants[restaurant_id-1]['name']}}?</h1>
+<form action = "{{ url_for('deleteRestaurant',restaurant_id = restaurant_id)}}" method = post>
+<!--need to figure out how to get the yes and no option to work, it's not currently working-->
+<!--either you choose yes or no, and then confirm, the result is the same, it deletes-->
+<!--goal is to find out how to make this work, or can add a button that works the same as 'Cancel'-->
+    <p>
+    <input type="radio" name="yes_no" checked>Yes</input>
+    </p>
+    <p>
+    <input type="radio" name="yes_no">No</input>
+    </p>
 
+    </input>
+<input type = 'submit' value = 'Confirm'>
+</br>
+<a href = "{{url_for('showRestaurants')}}">Cancel</a>
+</form >
 </body>
 
 </html>

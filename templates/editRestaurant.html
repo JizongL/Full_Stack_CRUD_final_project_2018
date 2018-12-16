@@ -1,6 +1,22 @@
 <html>
 <body>
 <a> "This page will be for editing restaurant"</a>
+<!--remember to add action in the form tag, I forgot the first few times and it did not work-->
+<form action="{{ url_for('editRestaurant',restaurant_id = restaurant_id )}}" method = 'post'>
+<h1>Edit the name of the restaurant</h1>
+<!--restaurant_id -1 because python list starts from 0-->
+<h2>{{restaurants[restaurant_id-1]['name']}}</h2>
+<a>Name: </a>
+
+<input type = 'text' size = '30' name = 'name' required
+placeholder="{{restaurants[restaurant_id-1]['name']}}">
+ <a>ID:</a>
+ <input type = 'text' size = '30' name = 'id' required
+  placeholder="{{restaurant_id}}">
+
+ <input type = 'submit' value = 'Edit'></br>
+ <a href = "{{url_for('showRestaurants')}}">Cancel</a>
+</form>
 
 </body>
 

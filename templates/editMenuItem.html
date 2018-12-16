@@ -1,7 +1,17 @@
 <html>
 <body>
 <a> "This page will be for editing menu items"</a>
+<h1>Enter new item for {{restaurants[restaurant_id-1]['name']}}</h1>
 
+<form action = "{{url_for('editMenuItem', restaurant_id = restaurant_id,menu_id=menu_id)}}" method = post>
+    <li>Name: <input type = 'text' name = 'name' size = '30' placeholder="{{items['name']}}">
+    <li>Course: <input type = 'text' price = 'course' size = '30' placeholder="{{items['price']}}">
+    <li>Price: <input type = 'text' name = 'price' size = '30' placeholder="{{items['price']}}">
+    <li>Description: <input type = 'text' name = 'description' size = '30' placeholder="{{items['description']}}">
+    </br><input type = 'submit' value = submit>
+    </li>
+</form>
+<a href = "{{url_for('showRestaurants')}}" >Cancel</a>
 </body>
 
 </html>

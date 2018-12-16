@@ -4,17 +4,18 @@
 <a> "This page will be for showing all the restaurants"</a>
 <br>
 
-
+<h1>Restaurant DataBase</h1>
 {% for i in restaurants %}
-
-{{ i }}
+<!--shows name-->
+<li> {{ i['name'] }}
+<!--link to show menu, id is str here, but it will become int during routing-->
+<a href = '{{url_for('showMenu', restaurant_id = i['id'])}}'> go to </a>
+<a href = '{{url_for('editRestaurant', restaurant_id = i['id'])}}'>Edit</a>
+<a href = '{{url_for('deleteRestaurant',restaurant_id = i['id'])}}'>Delete</a>
+</li></br>
 
 {% endfor %}
-
-<div>
-<h1>Restaurant {{restaurant_id}}<h1>
-<h2>Restaurant Dict {{restaurants[restaurant_id]}}</h2>
-<h2>{{restaurants[restaurant_id]}}</h2>
+<a href = "{{url_for('newRestaurant')}}">Add a new restaurant</a>
 
 
 </div>
