@@ -2,6 +2,16 @@
 <body>
 <a> "This page will be for showing menu items"</a>
 
+
+<h2>{{restaurants[restaurant_id-1]['name']}}</h2>
+</br>
+<p>
+{% for i in items %}
+<li> <strong> {{i}} :</strong>
+{{items[i]}} </li>
+
+{% endfor %}
+</p>
 </body>
 
 </html>

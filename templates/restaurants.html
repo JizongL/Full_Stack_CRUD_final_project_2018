@@ -2,8 +2,24 @@
 <html>
 <body>
 <a> "This page will be for showing all the restaurants"</a>
+<br>
 
 
+{% for i in restaurants %}
+
+{{ i }}
+
+{% endfor %}
+
+<div>
+<h1>Restaurant {{restaurant_id}}<h1>
+<h2>Restaurant Dict {{restaurants[restaurant_id]}}</h2>
+<h2>{{restaurants[restaurant_id]}}</h2>
+
+
+</div>
+</br>
+<!--<a>test: {{restaurant_id}}</a> testing if the id is working-->
 
 </body>
 
